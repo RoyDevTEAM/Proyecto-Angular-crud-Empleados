@@ -60,4 +60,17 @@ export class UsuarioService {
   agregarUsuario(usuario: Usuario) {
     this.listUsuarios.unshift(usuario);
   }
+  
+  // Método para obtener un usuario por su nombre de usuario
+  getUsuarioPorNombre(nombreUsuario: string): Usuario | undefined {
+    return this.listUsuarios.find((usuario) => usuario.usuario === nombreUsuario);
+  }
+
+  // Método para actualizar un usuario
+  actualizarUsuario(usuarioExistente: Usuario, datosNuevos: Usuario): void {
+    const index = this.listUsuarios.indexOf(usuarioExistente);
+    if (index !== -1) {
+      this.listUsuarios[index] = { ...usuarioExistente, ...datosNuevos };
+    }
+  }
 }

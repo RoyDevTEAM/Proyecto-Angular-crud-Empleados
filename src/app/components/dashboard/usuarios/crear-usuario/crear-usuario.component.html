@@ -1,53 +1,67 @@
 <div class="container">
-    <mat-toolbar>
-        <span>Crear nuevo usuario</span>
+  <!-- Barra de herramientas con fondo de color azul -->
+  <mat-toolbar color="primary">
+    <!-- Título en la barra de herramientas -->
+    <span class="toolbar-title">Crear nuevo usuario</span>
+  </mat-toolbar>
 
-    </mat-toolbar>
-    <mat-card>
-        <form [formGroup]="form" (ngSubmit)="agregarUsuario()">
-            <mat-grid-list cols="4" rowHeight="70px">
-                <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <mat-form-field class="ancho" appearance="outline">
-                        <mat-label>Usuario</mat-label>
-                        <input matInput formControlName="usuario">
-                    </mat-form-field>
-                </mat-grid-tile>
+  <mat-card class="card"> <!-- Tarjeta que contiene el formulario -->
+    <form [formGroup]="form" (ngSubmit)="agregarUsuario()"> <!-- Inicio del formulario -->
+      <mat-grid-list cols="4" rowHeight="70px"> <!-- Cuadrícula con 4 columnas y altura de fila de 70px -->
 
-                <mat-grid-tile [colspan]="3" [rowspan]="5">
-                    <img src="./assets/img/usuario.png" width="250" height="250">
-                </mat-grid-tile>
-                <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <mat-form-field class="ancho" appearance="outline">
-                        <mat-label>Nombre</mat-label>
-                        <input matInput formControlName="nombre">
-                    </mat-form-field>
-                </mat-grid-tile>
-                <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <mat-form-field class="ancho" appearance="outline">
-                        <mat-label>Apellido</mat-label>
-                        <input matInput formControlName="apellido">
-                    </mat-form-field>
-                </mat-grid-tile>
-                <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <mat-form-field appearance="outline" class="ancho">
-                        <mat-label>Sexo</mat-label>
-                        <mat-select formControlName="sexo">
-                            <mat-option *ngFor="let sex of sexo" [value]="sex">
-                                {{sex}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </mat-grid-tile>
-                <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <button mat-raised-button style="margin-right: 20px;">Volver</button>
-                    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Aceptar</button>
-                </mat-grid-tile>
+        <!-- Campo de usuario -->
+        <mat-grid-tile [colspan]="1" [rowspan]="1"> <!-- Ocupa 1 columna y 1 fila -->
+          <mat-form-field class="ancho" appearance="outline"> <!-- Campo de formulario con borde -->
+            <mat-label>Usuario</mat-label> <!-- Etiqueta del campo -->
+            <input matInput formControlName="usuario"> <!-- Entrada de texto con enlace a formControl "usuario" -->
+          </mat-form-field>
+        </mat-grid-tile>
 
-            </mat-grid-list>
+        <!-- Imagen de usuario -->
+        <mat-grid-tile [colspan]="3" [rowspan]="5"> <!-- Ocupa 3 columnas y 5 filas -->
+          <img src="./assets/img/v1.png" width="250" height="250" alt="Usuario"> <!-- Imagen del usuario -->
+        </mat-grid-tile>
 
-            <br><br>
+        <!-- Campo de nombre -->
+        <mat-grid-tile [colspan]="1" [rowspan]="1"> <!-- Ocupa 1 columna y 1 fila -->
+          <mat-form-field class="ancho" appearance="outline"> <!-- Campo de formulario con borde -->
+            <mat-label>Nombre</mat-label> <!-- Etiqueta del campo -->
+            <input matInput formControlName="nombre"> <!-- Entrada de texto con enlace a formControl "nombre" -->
+          </mat-form-field>
+        </mat-grid-tile>
 
-        </form>
-    </mat-card>
+        <!-- Campo de apellido -->
+        <mat-grid-tile [colspan]="1" [rowspan]="1"> <!-- Ocupa 1 columna y 1 fila -->
+          <mat-form-field class="ancho" appearance="outline"> <!-- Campo de formulario con borde -->
+            <mat-label>Apellido</mat-label> <!-- Etiqueta del campo -->
+            <input matInput formControlName="apellido"> <!-- Entrada de texto con enlace a formControl "apellido" -->
+          </mat-form-field>
+        </mat-grid-tile>
 
+        <!-- Campo de selección de sexo -->
+        <mat-grid-tile [colspan]="1" [rowspan]="1"> <!-- Ocupa 1 columna y 1 fila -->
+          <mat-form-field appearance="outline" class="ancho"> <!-- Campo de formulario con borde -->
+            <mat-label>Sexo</mat-label> <!-- Etiqueta del campo -->
+            <mat-select formControlName="sexo"> <!-- Selección desplegable con enlace a formControl "sexo" -->
+              <mat-option *ngFor="let sex of sexo" [value]="sex"> <!-- Opción generada dinámicamente con un bucle ngFor -->
+                {{sex}} <!-- Valor de la opción -->
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <!-- Contenedor de botones -->
+        <mat-grid-tile [colspan]="1" [rowspan]="1"> <!-- Ocupa 1 columna y 1 fila -->
+          <div class="button-container">
+            <!-- Botón para volver -->
+            <button mat-raised-button color="warn" class="back-button">Volver</button>
+            <!-- Botón de aceptar, habilitado o deshabilitado según la validez del formulario -->
+            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" class="accept-button">
+              Aceptar
+            </button>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list> <!-- Fin de la cuadrícula -->
+    </form> <!-- Fin del formulario -->
+  </mat-card> <!-- Fin de la tarjeta que contiene el formulario -->
 </div>

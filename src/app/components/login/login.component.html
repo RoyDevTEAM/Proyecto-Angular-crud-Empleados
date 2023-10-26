@@ -1,20 +1,21 @@
 <div class="body">
     <div class="login">
-        <mat-spinner diameter="50" *ngIf="loading"></mat-spinner>
-        <form [formGroup]="form" (ngSubmit)="Ingresar()">
-            <img src="./assets/img/usuario.png" width=50%;>
-            <h1>Login</h1>
+        <mat-spinner diameter="50" *ngIf="loading"></mat-spinner> <!-- Spinner de carga condicional -->
+        <form [formGroup]="form" (ngSubmit)="Ingresar()"> <!-- Inicio del formulario -->
+            <img src="./assets/img/v2.png" width="50%"> <!-- Imagen de la empresa -->
+            <h1>Login</h1> <!-- Título "Login" -->
             <mat-form-field class="ancho">
-                <mat-label>Usuario</mat-label>
-                <input type="text" matInput autocomplete="off" formControlName="usuario">
+                <mat-label>Usuario</mat-label> <!-- Etiqueta del campo de usuario -->
+                <input type="text" matInput autocomplete="off" formControlName="usuario"> <!-- Entrada de texto para el usuario -->
             </mat-form-field>
             <mat-form-field class="ancho">
-                <mat-label>Contraseña</mat-label>
-                <input type="password" matInput autocomplete="off" formControlName="password">
+                <mat-label>Contraseña</mat-label> <!-- Etiqueta del campo de contraseña -->
+                <input type="password" matInput autocomplete="off" formControlName="password"> <!-- Entrada de texto para la contraseña -->
             </mat-form-field>
-            <br>
-            <button type="submit" class="ancho button" mat-raised-button color="primary"
-                [disabled]="form.invalid">Ingresar</button>
-        </form>
+            <br> <!-- Salto de línea -->
+            <button type="submit" class="ancho button" mat-raised-button color="primary" [disabled]="form.invalid">
+                Ingresar <!-- Botón de inicio de sesión, habilitado o deshabilitado según la validez del formulario -->
+            </button>
+        </form> <!-- Fin del formulario -->
     </div>
 </div>
