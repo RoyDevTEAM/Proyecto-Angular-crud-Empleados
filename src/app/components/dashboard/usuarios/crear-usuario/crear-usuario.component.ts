@@ -29,7 +29,11 @@ export class CrearUsuarioComponent {
   }
 
   sexo: any[] = ['masculino', 'femenino']; // Opciones de selección para el campo "sexo"
-
+// Agregar esta función al componente para redirigir sin agregar un usuario
+volver() {
+  // Redirigir a la lista de usuarios en el panel de control
+  this.router.navigate(['/dashboard/usuarios']);
+}
   agregarUsuario() {
     // Crear un nuevo objeto de usuario con los datos del formulario
     const user: Usuario = {

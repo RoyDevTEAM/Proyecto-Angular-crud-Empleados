@@ -54,7 +54,7 @@
         <mat-grid-tile [colspan]="1" [rowspan]="1"> <!-- Ocupa 1 columna y 1 fila -->
           <div class="button-container">
             <!-- Botón para volver -->
-            <button mat-raised-button color="warn" class="back-button">Volver</button>
+            <button mat-raised-button color="warn" class="back-button" (click)="volver()">Volver</button>
             <!-- Botón de aceptar, habilitado o deshabilitado según la validez del formulario -->
             <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" class="accept-button">
               Aceptar
