@@ -1,9 +1,19 @@
+<!-- Un componente de barra de herramientas (toolbar) con un color de fondo azul (color="primary") -->
 <mat-toolbar color="primary">
-    <span>agregarUsuario</span>
+    <!-- Un elemento de texto con el título "REGISTRA EL EMPLEADO" -->
+    <span>REGISTRA EL EMPLEADO</span>
+    <!-- Un elemento con clase "example-spacer" que crea un espacio en blanco para la alineación -->
     <span class="example-spacer"></span>
+    
+    <!-- Utiliza un bucle *ngFor para iterar a través de elementos del arreglo 'menu' -->
     <button mat-button *ngFor="let item of menu" [routerLink]="item.redirect">{{item.nombre}}</button>
+    
+    <!-- Otro espacio en blanco para la alineación -->
     <span class="example-spacer"></span>
+    
+    <!-- Un botón de ícono (mat-icon-button) con un ícono de cierre de sesión (logout) -->
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" routerLink="/login">
+        <!-- Ícono de cierre de sesión -->
         <mat-icon>logout</mat-icon>
     </button>
 </mat-toolbar>

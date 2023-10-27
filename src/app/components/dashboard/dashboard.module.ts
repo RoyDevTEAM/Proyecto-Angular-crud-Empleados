@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
+import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.co
     NavbarComponent,
     UsuariosComponent,
     ReportesComponent,
-    CrearUsuarioComponent
+    CrearUsuarioComponent,
+    EditarUsuarioComponent
   ],
   imports: [CommonModule, DashboardRoutingModule, SharedModule],
 })

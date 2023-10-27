@@ -8,14 +8,17 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  menu: Menu[] = [];
+  menu: Menu[] = []; // Arreglo para almacenar elementos del menú
 
   constructor(private _menuService: MenuService) {}
+
   ngOnInit(): void {
-    this.cargarMenu();
+    this.cargarMenu(); // Llama a la función para cargar el menú al inicializar el componente
   }
 
   cargarMenu() {
+    // Llama al servicio (_menuService) para obtener el menú y sus elementos
     this._menuService.getMenu().subscribe((response) => (this.menu = response));
+    // Utiliza el método "subscribe" para esperar una respuesta asincrónica y asigna el menú al arreglo "menu" cuando se reciba la respuesta.
   }
 }

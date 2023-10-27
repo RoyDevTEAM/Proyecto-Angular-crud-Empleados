@@ -59,4 +59,5 @@ export class UsuariosComponent {
       verticalPosition: 'bottom', // Posición vertical del mensaje
     });
   }
+  
 }

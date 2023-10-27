@@ -8,9 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Componentes
 import { LoginComponent } from './components/login/login.component';
 import { SharedModule } from './components/shared/shared.module';
+import { EditarUsuarioComponent } from './dashboard/usuarios/editar-usuario/editar-usuario.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, EditarUsuarioComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

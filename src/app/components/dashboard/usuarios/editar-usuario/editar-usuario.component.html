@@ -1,0 +1,64 @@
+<div class="container">
+    <!-- Encabezado de la página -->
+    <mat-toolbar color="primary">
+        <span class="toolbar-title">Editar usuario</span> <!-- Título de la barra de herramientas -->
+    </mat-toolbar>
+
+    <!-- Tarjeta de edición del usuario -->
+    <mat-card class="card">
+        <form [formGroup]="form" (ngSubmit)="editarUsuario()">
+            <mat-grid-list cols="4" rowHeight="70px">
+                <!-- Columna 1: Campo "Usuario" -->
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho" appearance="outline">
+                        <mat-label>Usuario</mat-label> <!-- Etiqueta del campo "Usuario" -->
+                        <input matInput formControlName="usuario"> <!-- Entrada de texto controlada por el formulario -->
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <!-- Columna 2: Imagen del usuario -->
+                <mat-grid-tile [colspan]="3" [rowspan]="5">
+                    <img src="./assets/img/v1.png" width="250" height="250" alt="Usuario"> <!-- Imagen del usuario -->
+                </mat-grid-tile>
+
+                <!-- Columna 3: Campo "Nombre" -->
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho" appearance="outline">
+                        <mat-label>Nombre</mat-label> <!-- Etiqueta del campo "Nombre" -->
+                        <input matInput formControlName="nombre"> <!-- Entrada de texto controlada por el formulario -->
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <!-- Columna 4: Campo "Apellido" -->
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho" appearance="outline">
+                        <mat-label>Apellido</mat-label> <!-- Etiqueta del campo "Apellido" -->
+                        <input matInput formControlName="apellido"> <!-- Entrada de texto controlada por el formulario -->
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <!-- Columna 5: Campo "Sexo" -->
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field appearance="outline" class="ancho">
+                        <mat-label>Sexo</mat-label> <!-- Etiqueta del campo "Sexo" -->
+                        <mat-select formControlName="sexo"> <!-- Menú desplegable controlado por el formulario -->
+                            <mat-option *ngFor="let sex of sexo" [value]="sex">
+                                {{sex}}
+                            </mat-option> <!-- Opciones para seleccionar el sexo -->
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <!-- Columna 6: Botones de acción -->
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <div class="button-container">
+                        <button mat-raised-button color="warn" class="back-button">Volver</button> <!-- Botón para volver atrás -->
+                        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" class="accept-button">
+                            Guardar cambios
+                        </button> <!-- Botón para guardar los cambios (habilitado solo si el formulario es válido) -->
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+    </mat-card>
+</div>
